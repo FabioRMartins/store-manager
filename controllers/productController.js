@@ -1,6 +1,6 @@
 const productService = require('../services/productService');
 
-const getAllProducts = async (req, res) => {
+const getAllProducts = async (_req, res) => {
   const result = await productService.getAllProducts();
   if (!result) {
     return res.status(404).json({ message: 'Product not found' });

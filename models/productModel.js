@@ -2,6 +2,9 @@ const connection = require('./connectionModel');
 
 const getAllProducts = async () => {
   const [result] = await connection.execute('SELECT * FROM StoreManager.products ORDER BY id');
+  if (result.length === 0) {
+    return [];
+  }
   return result;
 };
 
