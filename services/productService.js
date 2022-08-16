@@ -15,4 +15,7 @@ const getProductsById = async (id) => {
   }
   return resultId;
 };
-module.exports = { getAllProducts, getProductsById };
+
+const addNewProduct = async (name) => productModel.addNewProduct(name);
+
+module.exports = { getAllProducts, getProductsById, addNewProduct };

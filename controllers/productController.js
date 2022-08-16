@@ -4,7 +4,7 @@ const getAllProducts = async (_req, res) => {
   const result = await productService.getAllProducts();
   if (!result) {
     return res.status(404).json({ message: 'Product not found' });
-  } 
+  }
   return res.status(200).json(result);
 };
 
@@ -18,4 +18,11 @@ const getProductsById = async (req, res) => {
   return res.status(200).json(resultId);
 };
 
-module.exports = { getAllProducts, getProductsById };
+const addNewProduct = async (req, res) => {
+  const { name } = req.body;
+  const resultName = await productService.addNewProduct(name);
+ 
+  return res.status(201).json(resultName);
+};
+
+module.exports = { getAllProducts, getProductsById, addNewProduct };

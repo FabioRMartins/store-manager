@@ -1,10 +1,8 @@
 const { expect } = require('chai');
-const { func } = require('joi');
 const { describe } = require('mocha');
 const Sinon = require('sinon');
-const connection = require('../../../models/connectionModel');
-const { getConnection } = require('../../../models/connectionModel');
-const productModel = require('../../../models/productModel');
+const connection = require('../../models/connectionModel');
+const productModel = require('../../models/productModel');
 
 
 describe('GET ALL PRODUCTS', () => {

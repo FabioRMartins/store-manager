@@ -1,9 +1,8 @@
 const { expect } = require('chai');
 const { describe } = require('mocha');
 const Sinon = require('sinon');
-const connection = require('../../../models/connectionModel');
-const productModel = require('../../../models/productModel');
-const productService = require('../../../services/productService');
+const productModel = require('../../models/productModel');
+const productService = require('../../services/productService');
 
 describe('GET ALL PRODUCTS', () => {
   describe("Caso ok", () => {
@@ -31,7 +30,7 @@ describe('GET ALL PRODUCTS', () => {
       expect(result).to.be.not.empty;
     })
     it('Retorna array com objetos', async () => {
-      const resultExecute = [{ id: 1, name: 'test' }];
+      const resultExecute = { id: 1, name: 'test' };
       Sinon.stub(productModel, 'getAllProducts').resolves(resultExecute);
       const result = await productService.getAllProducts();
       expect(result).to.be.an('object');
