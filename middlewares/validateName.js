@@ -9,4 +9,4 @@ const validateName = async (req, res, next) => {
   next();
 };
 
-module.exports = validateName;
+module.exports = { validateName };

@@ -16,12 +16,14 @@ const getProductsById = async (id) => {
   return resultId;
 };
 
-const addNewProduct = async (name) => {
-  const resultName = await productModel.addNewProduct(name);
-   if (!resultName) {
-     return null;
-   }
-  return resultName;
+const addNewProduct = async (name) => productModel.addNewProduct(name);
+
+const updateProduct = async (id, name) => {
+  const resultUpdate = await productModel.updateProduct(id, name);
+  if (!resultUpdate.affectedRows) {
+    return null;
+  }
+  return resultUpdate;
 };
 
-module.exports = { getAllProducts, getProductsById, addNewProduct };
+module.exports = { getAllProducts, getProductsById, addNewProduct, updateProduct };
